@@ -15,8 +15,7 @@ jobs:
     - name: Setup MSBuild.exe
       uses: warrenbuckley/Setup-MSBuild@v1
     - name: MSBuild
-      working-directory:  \dotnet-framework-docker\samples\aspnetapp\aspnetapp\
-      run: msbuild aspnetapp.csproj -p:Configuration=Release
+      run: msbuild dotnet-framework-docker\samples\aspnetapp\aspnetapp\aspnetapp.csproj -p:Configuration=Release
     - uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}    
