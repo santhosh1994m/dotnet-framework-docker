@@ -1,0 +1,27 @@
+name: deploytoservermaster
+on:
+  push:
+    # Sequence of patterns matched against refs/heads
+    branches:    
+    - 'master'
+jobs:
+  build-and-deploy:
+    runs-on: windows-latest
+    steps:
+    - name: 'Checkout Github Action' 
+      uses: actions/checkout@master
+      with:
+        ref: master
+    - name: Setup MSBuild.exe
+      uses: warrenbuckley/Setup-MSBuild@v1
+    - name: MSBuild
+      run: msbuild dotnet-framework-docker/samples/aspnetapp/aspnetapp/aspnetapp.csproj -p:Configuration=Release
+    - uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}    
+    - run: |
+        az webapp list --query "[?state=='Running']"
+    - uses: azure/webapps-deploy@v1
+      with: 
+        app-name: santhosh321
+        publish-profile: ${{ secrets.azureWebAppPublishProfile }}
