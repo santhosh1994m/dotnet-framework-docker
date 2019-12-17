@@ -19,7 +19,7 @@ jobs:
     - name: Setup MSBuild.exe
       uses: warrenbuckley/Setup-MSBuild@v1
     - name: MSBuild
-      run: msbuild d:\a\dotnet-framework-docker\dotnet-framework-docker\samples\aspnetapp\aspnetapp\aspnetapp.csproj -p:Configuration=Release
+      run: msbuild d:\a\dotnet-framework-docker\dotnet-framework-docker\samples\aspnetapp\aspnetapp\aspnetapp.csproj -p:Configuration=Release -o ${{env.DOTNET_ROOT}}/myapp 
     - uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}    
@@ -29,3 +29,4 @@ jobs:
       with: 
         app-name: santhosh321
         publish-profile: ${{ secrets.azureWebAppPublishProfile }}
+        package: ${{env.DOTNET_ROOT}}/myapp 
