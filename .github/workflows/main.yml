@@ -18,3 +18,4 @@ jobs:
       uses: warrenbuckley/Setup-MSBuild@v1
     - name: MSBuild
       run: msbuild C:\actions-runner\actions-runner\dotnet-framework-docker\dotnet-framework-docker\samples\aspnetapp\aspnetapp\aspnetapp.csproj -p:Configuration=Release /p:OutDir=c:\custom_build_out\ 
+
