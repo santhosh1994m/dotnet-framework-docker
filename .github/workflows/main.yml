@@ -16,5 +16,5 @@ jobs:
       run: nuget restore C:\actions-runner\actions-runner\dotnet-framework-docker\dotnet-framework-docker\samples\aspnetapp\aspnetapp.sln
     - name: MSBuild
       working-directory: C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\
-      run: MSBuild.exe C:\actions-runner\actions-runner\dotnet-framework-docker\dotnet-framework-docker\samples\aspnetapp\aspnetapp\aspnetapp.csproj -p:Configuration=Release /p:OutDir=c:\
+      run: MSBuild C:\actions-runner\actions-runner\dotnet-framework-docker\dotnet-framework-docker\samples\aspnetapp\aspnetapp\aspnetapp.csproj -p:Configuration=Release /p:OutDir=c:\
       
