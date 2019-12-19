@@ -17,4 +17,4 @@ jobs:
     - name: MSBuild
       run: >
        C:\actions-runner\MSBuild\Microsoft\Bin\MSBuild.exe C:\actions-runner\_work\dotnet-framework-docker\dotnet-framework-docker\samples\aspnetapp\aspnetapp\aspnetapp.csproj -p:Configuration=Release /p:OutDir=c:\
-      
+    
