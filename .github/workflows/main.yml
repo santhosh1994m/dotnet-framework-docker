@@ -6,7 +6,7 @@ on:
     - 'master'
 jobs:
   build-and-deploy:
-    runs-on: windows-latest
+    runs-on: self-hosted
     steps:
     - name: 'Checkout Github Action' 
       uses: actions/checkout@master
