@@ -13,7 +13,7 @@ jobs:
     - name: update the nuget  
       run: |
          cd C:\actions-runner\_work\_tool\nuget\latest\x64
-         nuget restore C:\actions-runner\_work\dotnet-framework-docker\dotnet-framework-docker\samples\aspnetapp\aspnetapp.sln -p:OutDir=C:\actions-runner\_work
+         nuget restore C:\actions-runner\_work\dotnet-framework-docker\dotnet-framework-docker\samples\aspnetapp\aspnetapp.sln 
       shell: cmd
     - name: MSBuild
       run: |
