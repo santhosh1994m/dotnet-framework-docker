@@ -17,5 +17,5 @@ jobs:
     - name: MSBuild
       run: |
        cd "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\"
-       MSBuild C:\actions-runner\_work\dotnet-framework-docker\dotnet-framework-docker\samples\aspnetapp\aspnetapp\aspnetapp.csproj /p:Configuration=Release -path:OutDir=c:\
+       MSBuild C:\actions-runner\_work\dotnet-framework-docker\dotnet-framework-docker\samples\aspnetapp\aspnetapp\aspnetapp.csproj /p:Configuration=Release -p:OutDir=c:\
       shell: cmd
