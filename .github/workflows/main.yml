@@ -10,8 +10,6 @@ jobs:
     steps:
     - name: 'Checkout Github Action' 
       uses: actions/checkout@master
-    - name: Install NuGet client
-      uses: warrenbuckley/Setup-Nuget@v1
     - name: update the nuget  
       run: nuget restore C:\actions-runner\_work\dotnet-framework-docker\dotnet-framework-docker\samples\aspnetapp\aspnetapp.sln
     - name: Setup MSBuild.exe
