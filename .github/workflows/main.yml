@@ -12,11 +12,11 @@ jobs:
       uses: actions/checkout@master
     - name: update the nuget  
       run: |
-         cd "C:\actions-runner\_work\_tool\nuget\latest\x64"
+         cd C:\actions-runner\_work\_tool\nuget\latest\x64
          nuget restore C:\actions-runner\_work\dotnet-framework-docker\dotnet-framework-docker\samples\aspnetapp\aspnetapp.sln
       shell: cmd
     - name: MSBuild
       run: |
-          cd "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin"
+          cd C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin
           msbuild.exe C:\actions-runner\_work\dotnet-framework-docker\dotnet-framework-docker\samples\aspnetapp\aspnetapp\aspnetapp.csproj /p:Configuration=Release
       shell: cmd
